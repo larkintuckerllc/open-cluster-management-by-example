@@ -1,0 +1,15 @@
+apiVersion: work.open-cluster-management.io/v1
+kind: ManifestWork
+metadata:
+  name: hello-world
+  namespace: cluster1
+spec:
+  workload:
+    manifests:
+      - apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: hello-ocm
+          namespace: default
+        data:
+          message: "Hello from the hub!"
